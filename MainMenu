@@ -1,0 +1,24 @@
+using UnityEngine;
+using UnityEngine.SceneManagement;
+
+public class MainMenu : MonoBehaviour
+{
+    // This function will be called when the "Start Game" button is clicked
+    public void StartGame()
+    {
+        // Replace "GameScene" with the name of the scene you want to load
+        SceneManager.LoadScene("GameScene");
+    }
+
+    // This function will be called when the "Quit" button is clicked
+    public void QuitGame()
+    {
+        // This will only work in a built application, not in the editor
+        Application.Quit();
+
+        // If you are in the editor, you can stop playing the game using the following line:
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#endif
+    }
+}
